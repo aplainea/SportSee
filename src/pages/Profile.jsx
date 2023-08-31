@@ -1,5 +1,3 @@
-import HorizontalNavigator from "../components/HorizontalNavigator";
-
 export default function DashboardPage() {
     return (
         <>

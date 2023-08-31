@@ -6,4 +6,5 @@
 @import "./base/_base";
 @import "./base/_typography";
 
-@import "../../components/HorizontalNavigator.scss";
+@import "../../components/HorizontalNavigator/HorizontalNavigator.scss";
+@import "../../components/VerticalNavigator/VerticalNavigator.scss";
