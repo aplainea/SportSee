@@ -1,7 +1,10 @@
 import logo from "../../assets/logo_sportsee.svg";
 import { NavLink } from "react-router-dom";
+import { useCurrentUser } from "../../hooks/useCurrentUser";
 
 export default function HorizontalNavigator() {
+    const currentUser = useCurrentUser();
+
     return (
         <>
             <header>
@@ -20,7 +23,7 @@ export default function HorizontalNavigator() {
                         </li>
                         <li>
                             <NavLink
-                                to="/profile"
+                                to={`/profile/user/${currentUser}`}
                                 className={({ isActive }) =>
                                     isActive ? "active" : ""
                                 }
