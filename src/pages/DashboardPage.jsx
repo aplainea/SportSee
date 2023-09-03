@@ -13,6 +13,7 @@ export default function DashboardPage() {
         <>
             <div>
                 <h1>Page d'accueil</h1>
+                <br />
                 <p>Sélectionnez un utilisateur : {currentUser}</p>
                 <button onClick={() => handleUserSelection(12)}>
                     Utilisateur 12
