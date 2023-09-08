@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { fetchUserActivityById, fetchUserById } from "../services/userService";
 import { useCurrentUser } from "../hooks/useCurrentUser";
+import DailyActivity from "../components/DailyActivity/DailyActivity";
 
 export default function Profile() {
+    const currentUser = useCurrentUser();
+
     const [userData, setUserData] = useState(null);
     const [userActivity, setUserActivity] = useState(null);
-    const currentUser = useCurrentUser();
 
     useEffect(() => {
         Promise.all([
@@ -40,26 +42,9 @@ export default function Profile() {
                             👏
                         </p>
                     </div>
-                    <div className="profile-card">
+                    <div className="activity-container">
                         {userActivity && (
-                            <div>
-                                <br />
-                                <h2>Vos données de session :</h2>
-                                <br />
-                                <ul>
-                                    {userActivity.sessions.map(
-                                        (session, index) => (
-                                            <li key={index}>
-                                                Date : {session.day}
-                                                <br />
-                                                Kilogrammes : {session.kilogram}
-                                                <br />
-                                                Calories : {session.calories}
-                                            </li>
-                                        )
-                                    )}
-                                </ul>
-                            </div>
+                            <DailyActivity data={userActivity.sessions} />
                         )}
                     </div>
                 </>

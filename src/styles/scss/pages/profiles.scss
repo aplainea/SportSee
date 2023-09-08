@@ -1,4 +1,5 @@
 .profile {
+    margin: 0 0 50px 0;
     .title {
         color: $black;
         font-family: Roboto;
@@ -12,4 +13,9 @@
             color: $primary;
         }
     }
+}
+
+.activity-container {
+    width: 835px;
+    height: 320px;
 }
