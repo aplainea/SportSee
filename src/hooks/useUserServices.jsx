@@ -15,10 +15,13 @@ export const useUserData = (userId) => {
             try {
                 const userResponse = await fetchUserById(userId);
                 const activityResponse = await fetchUserActivityById(userId);
+                const averageSessionsResponse =
+                    await fetchUserAverageSessionsById(userId);
 
                 setUserData({
                     user: userResponse.data,
                     activity: activityResponse.data,
+                    averageSessions: averageSessionsResponse.data,
                 });
                 setLoading(false);
             } catch (error) {

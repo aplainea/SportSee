@@ -16,3 +16,7 @@ export const fetchUserById = async (userId) => {
 export const fetchUserActivityById = async (userId) => {
     return fetchDataWithUserId(userId, "/activity");
 };
+
+export const fetchUserAverageSessionsById = async (userId) => {
+    return fetchDataWithUserId(userId, "/average-sessions");
+};

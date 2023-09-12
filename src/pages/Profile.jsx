@@ -7,6 +7,7 @@ export default function Profile() {
     const { userData, loading, error } = useUserData(currentUser);
     const user = userData?.user;
     const activity = userData?.activity;
+    const averageSessions = userData?.averageSessions;
 
     if (loading) {
         return <div>Chargement en cours...</div>;
