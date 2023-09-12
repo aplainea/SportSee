@@ -1,30 +1,24 @@
-import { useState, useEffect } from "react";
-import { fetchUserActivityById, fetchUserById } from "../services/userService";
 import { useCurrentUser } from "../hooks/useCurrentUser";
+import { useUserData } from "../hooks/useUserServices";
 import DailyActivity from "../components/DailyActivity/DailyActivity";
 
 export default function Profile() {
     const currentUser = useCurrentUser();
+    const { userData, loading, error } = useUserData(currentUser);
+    const user = userData?.user;
+    const activity = userData?.activity;
 
-    const [userData, setUserData] = useState(null);
-    const [userActivity, setUserActivity] = useState(null);
+    if (loading) {
+        return <div>Chargement en cours...</div>;
+    }
 
-    useEffect(() => {
-        Promise.all([
-            fetchUserById(currentUser),
-            fetchUserActivityById(currentUser),
-        ])
-            .then(([userDataResponse, activityResponse]) => {
-                setUserData(userDataResponse.data);
-                setUserActivity(activityResponse.data);
-            })
-            .catch((error) => {
-                console.error(
-                    "Erreur lors de la récupération des données de l'utilisateur :",
-                    error
-                );
-            });
-    }, [currentUser]);
+    if (error) {
+        return <div>Une erreur s'est produite : {error.message}</div>;
+    }
+
+    if (!userData) {
+        return <div>Aucune donnée d'utilisateur disponible.</div>;
+    }
 
     return (
         <>
@@ -34,7 +28,7 @@ export default function Profile() {
                         <h1 className="title">
                             Bonjour{" "}
                             <span className="title-name">
-                                {userData.userInfos.firstName}
+                                {user.userInfos.firstName}
                             </span>
                         </h1>
                         <p className="sub-title">
@@ -43,9 +37,7 @@ export default function Profile() {
                         </p>
                     </div>
                     <div className="activity-container">
-                        {userActivity && (
-                            <DailyActivity data={userActivity.sessions} />
-                        )}
+                        <DailyActivity data={activity.sessions} />
                     </div>
                 </>
             )}

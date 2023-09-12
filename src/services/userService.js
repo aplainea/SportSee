@@ -1,19 +1,18 @@
 import API from "./api";
 
-export const fetchUserById = async (userId) => {
+const fetchDataWithUserId = async (userId, endpoint) => {
     try {
-        const response = await API.get(`/${userId}`);
+        const response = await API.get(`/${userId}${endpoint}`);
         return response.data;
     } catch (error) {
         throw error;
     }
 };
 
+export const fetchUserById = async (userId) => {
+    return fetchDataWithUserId(userId, "");
+};
+
 export const fetchUserActivityById = async (userId) => {
-    try {
-        const response = await API.get(`/${userId}/activity`);
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
+    return fetchDataWithUserId(userId, "/activity");
 };
