@@ -13,7 +13,6 @@ import {
 import DailyActivityTooltip from "../DailyActivityTooltip/DailyActivityTooltip";
 
 export default function DailyActivity({ data }) {
-    console.log(data);
     return (
         <>
             <ResponsiveContainer width="100%" height="100%">
@@ -32,11 +31,11 @@ export default function DailyActivity({ data }) {
                     <XAxis
                         dataKey="day"
                         tickLine={false}
+                        padding={{ left: -50, right: -50 }}
+                        dx={0}
                         height={70}
                         tickMargin={15.5}
-                        tickFormatter={(value) =>
-                            moment(value).format("DD/MM/YYYY")
-                        }
+                        tickFormatter={(value) => moment(value).format("D")}
                     />
                     <YAxis
                         dataKey="kilogram"

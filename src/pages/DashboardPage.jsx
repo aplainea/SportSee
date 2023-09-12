@@ -1,12 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
 import { useCurrentUser } from "../hooks/useCurrentUser";
 
 export default function DashboardPage() {
+    const navigate = useNavigate();
     const { setUserType } = useUser();
     const currentUser = useCurrentUser();
 
     const handleUserSelection = (userType) => {
         setUserType(userType);
+        navigate(`/profile/user/${userType}`);
     };
 
     return (
