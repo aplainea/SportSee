@@ -3,6 +3,7 @@ import {
     fetchUserById,
     fetchUserActivityById,
     fetchUserAverageSessionsById,
+    fetchUserPerformanceById,
 } from "../services/userService";
 
 export const useUserData = (userId) => {
@@ -17,11 +18,15 @@ export const useUserData = (userId) => {
                 const activityResponse = await fetchUserActivityById(userId);
                 const averageSessionsResponse =
                     await fetchUserAverageSessionsById(userId);
+                const performanceResponse = await fetchUserPerformanceById(
+                    userId
+                );
 
                 setUserData({
                     user: userResponse.data,
                     activity: activityResponse.data,
                     averageSessions: averageSessionsResponse.data,
+                    performance: performanceResponse.data,
                 });
                 setLoading(false);
             } catch (error) {
