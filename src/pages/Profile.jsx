@@ -1,13 +1,14 @@
 import { useCurrentUser } from "../hooks/useCurrentUser";
 import { useUserData } from "../hooks/useUserServices";
 import DailyActivity from "../components/DailyActivity/DailyActivity";
+import SessionDuration from "../components/SessionDuration/SessionDuration";
 
 export default function Profile() {
     const currentUser = useCurrentUser();
     const { userData, loading, error } = useUserData(currentUser);
     const user = userData?.user;
     const activity = userData?.activity;
-    // const averageSessions = userData?.averageSessions;
+    const averageSessions = userData?.averageSessions;
     // const performance = userData?.performance;
 
     if (loading) {
@@ -40,6 +41,11 @@ export default function Profile() {
                     </div>
                     <div className="activity-container">
                         <DailyActivity data={activity.sessions} />
+                    </div>
+                    <div className="charts-container">
+                        <div className="session-duration">
+                            <SessionDuration data={averageSessions.sessions} />
+                        </div>
                     </div>
                 </>
             )}

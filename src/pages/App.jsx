@@ -3,7 +3,7 @@ import HorizontalNavigator from "../components/HorizontalNavigator/HorizontalNav
 import VerticalNavigator from "../components/VerticalNavigator/VerticalNavigator";
 import { UserProvider } from "../contexts/UserContext";
 
-export default function DashboardPage() {
+export default function App() {
     return (
         <>
             <UserProvider>

@@ -1,0 +1,19 @@
+.line-chart {
+    background: $primary;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+
+    &-text {
+        fill: $white;
+        opacity: 0.6;
+        font-size: 15px;
+        font-weight: 550;
+
+        text-align: center;
+        font-family: Roboto;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+    }
+}
