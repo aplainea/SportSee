@@ -10,9 +10,12 @@
 @import "../../components/VerticalNavigator/VerticalNavigator.scss";
 
 @import "../../components/DailyActivity/DailyActivity.scss";
-@import "../../components/DailyActivityTooltip/DailyActivityTooltip.scss";
+@import "../../components/DailyActivity/DailyActivityTooltip/DailyActivityTooltip.scss";
 
 @import "../../components/SessionDuration/SessionDuration.scss";
-@import "../../components/SessionDurationTooltip/SessionDurationTooltip.scss";
+@import "../../components/SessionDuration/SessionDurationTooltip/SessionDurationTooltip.scss";
+
+@import "../../components/TypeActivity/TypeActivity.scss";
+@import "../../components/TypeActivity/TypeActivityTooltip/TypeActivityTooltip.scss";
 
 @import "./pages/profiles.scss";

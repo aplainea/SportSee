@@ -2,6 +2,7 @@ import { useCurrentUser } from "../hooks/useCurrentUser";
 import { useUserData } from "../hooks/useUserServices";
 import DailyActivity from "../components/DailyActivity/DailyActivity";
 import SessionDuration from "../components/SessionDuration/SessionDuration";
+import TypeActivity from "../components/TypeActivity/TypeActivity";
 
 export default function Profile() {
     const currentUser = useCurrentUser();
@@ -9,7 +10,7 @@ export default function Profile() {
     const user = userData?.user;
     const activity = userData?.activity;
     const averageSessions = userData?.averageSessions;
-    // const performance = userData?.performance;
+    const performance = userData?.performance;
 
     if (loading) {
         return <div>Chargement en cours...</div>;
@@ -45,6 +46,9 @@ export default function Profile() {
                     <div className="charts-container">
                         <div className="session-duration">
                             <SessionDuration data={averageSessions.sessions} />
+                        </div>
+                        <div className="type-activity">
+                            <TypeActivity data={performance} />
                         </div>
                     </div>
                 </>

@@ -7,7 +7,7 @@ import {
     Tooltip,
     ResponsiveContainer,
 } from "recharts";
-import SessionDurationTooltip from "../SessionDurationTooltip/SessionDurationTooltip";
+import SessionDurationTooltip from "./SessionDurationTooltip/SessionDurationTooltip";
 
 export default function SessionDuration({ data }) {
     // Fonction qui retourne la lettre du jour de la semaine en fonction de l'index
