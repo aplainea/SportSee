@@ -10,7 +10,7 @@ import {
     Legend,
     ResponsiveContainer,
 } from "recharts";
-import DailyActivityTooltip from "../DailyActivityTooltip/DailyActivityTooltip";
+import DailyActivityTooltip from "./DailyActivityTooltip/DailyActivityTooltip";
 
 export default function DailyActivity({ data }) {
     return (
