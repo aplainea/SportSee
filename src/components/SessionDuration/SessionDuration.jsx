@@ -9,8 +9,19 @@ import {
 } from "recharts";
 import SessionDurationTooltip from "./SessionDurationTooltip/SessionDurationTooltip";
 
+/**
+ * Renders a line chart displaying the average session duration for each day of the week.
+ * @param {Object} props - The component props.
+ * @param {Array} props.data - An array of objects containing the session duration data for each day of the week.
+ * @returns {JSX.Element} - The rendered component.
+ */
 export default function SessionDuration({ data }) {
-    // Fonction qui retourne la lettre du jour de la semaine en fonction de l'index
+    /**
+     * Returns the weekday letter corresponding to the given index.
+     * @param {number} index - The index of the weekday (1 for Monday, 2 for Tuesday, etc.).
+     * @returns {string} - The corresponding weekday letter (L for Monday, M for Tuesday, etc.).
+     * If the index is not between 1 and 7, returns "Index invalide".
+     */
     function getWeekdayLetter(index) {
         const weekdays = ["L", "M", "M", "J", "V", "S", "D"];
 
@@ -22,7 +33,11 @@ export default function SessionDuration({ data }) {
         }
     }
 
-    // On ajoute une propriété "dayLetter" à chaque objet du tableau "data"
+    /**
+     * Maps the data array to add a dayLetter property to each item using the getWeekdayLetter function.
+     * @param {Array} data - The data array to map.
+     * @returns {Array} - The mapped array with the dayLetter property added to each item.
+     */
     const dataWithDayLetter = data.map((item) => ({
         ...item,
         dayLetter: getWeekdayLetter(item.day),

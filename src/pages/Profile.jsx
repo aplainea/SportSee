@@ -6,6 +6,10 @@ import TypeActivity from "../components/TypeActivity/TypeActivity";
 import AverageScore from "../components/AverageScore/AverageScore";
 import CardKeysInfos from "../components/CardKeysInfos/CardKeysInfos";
 
+/**
+ * Renders the user's profile page with their data and charts.
+ * @returns {JSX.Element} The Profile component.
+ */
 export default function Profile() {
     const currentUser = useCurrentUser();
     const { userData, loading, error } = useUserData(currentUser);

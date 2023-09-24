@@ -12,6 +12,12 @@ import {
 } from "recharts";
 import DailyActivityTooltip from "./DailyActivityTooltip/DailyActivityTooltip";
 
+/**
+ * Renders a daily activity chart with kilogram and calories data.
+ * @param {Object} props - The component props.
+ * @param {Array} props.data - The data to be displayed in the chart.
+ * @returns {JSX.Element} - The DailyActivity component.
+ */
 export default function DailyActivity({ data }) {
     return (
         <>

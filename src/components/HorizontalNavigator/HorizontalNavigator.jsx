@@ -2,7 +2,15 @@ import logo from "../../assets/logo_sportsee.svg";
 import { NavLink } from "react-router-dom";
 import { useCurrentUser } from "../../hooks/useCurrentUser";
 
+/**
+ * Renders a horizontal navigation bar with links to different pages.
+ * @returns {JSX.Element} The horizontal navigation bar component.
+ */
 export default function HorizontalNavigator() {
+    /**
+     * Retrieves the current user using the useCurrentUser hook.
+     * @returns {Object} The current user object.
+     */
     const currentUser = useCurrentUser();
 
     return (

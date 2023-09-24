@@ -1,3 +1,9 @@
+/**
+ * This file is the entry point of the SportSee application.
+ * It creates a router with specified routes and their corresponding elements.
+ * @module index
+ */
+
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -8,6 +14,12 @@ import ErrorPage from "./pages/ErrorPage";
 import DashboardPage from "./pages/DashboardPage";
 import Profile from "./pages/Profile";
 
+/**
+ * Creates a router with specified routes and their corresponding elements.
+ * @function createBrowserRouter
+ * @param {Array} routes - An array of route objects.
+ * @returns {Object} - Returns a router object.
+ */
 const router = createBrowserRouter([
     {
         path: "/",
@@ -34,11 +46,20 @@ const router = createBrowserRouter([
     },
 ]);
 
+/**
+ * Renders the SportSee application.
+ * @function ReactDOM.createRoot
+ * @param {HTMLElement} document.getElementById("root") - The root element of the application.
+ * @returns {void}
+ */
 ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+/**
+ * Measures the performance of the SportSee application.
+ * @function reportWebVitals
+ * @param {function} console.log - A function to log results.
+ * @returns {void}
+ */
 reportWebVitals();

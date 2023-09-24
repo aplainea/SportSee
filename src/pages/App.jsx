@@ -3,6 +3,10 @@ import HorizontalNavigator from "../components/HorizontalNavigator/HorizontalNav
 import VerticalNavigator from "../components/VerticalNavigator/VerticalNavigator";
 import { UserProvider } from "../contexts/UserContext";
 
+/**
+ * Renders the main application component.
+ * @returns {JSX.Element} The main application component.
+ */
 export default function App() {
     return (
         <>

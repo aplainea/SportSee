@@ -1,5 +1,12 @@
 import PropTypes from "prop-types";
 
+/**
+ * Renders a tooltip for daily activity.
+ * @param {Object} props - The props object.
+ * @param {boolean} props.active - Whether the tooltip is active or not.
+ * @param {Array} props.payload - The payload data for the tooltip.
+ * @returns {JSX.Element} - The tooltip component.
+ */
 export default function DailyActivityTooltip({ active, payload }) {
     if (active && payload && payload.length) {
         return (

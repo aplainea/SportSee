@@ -3,6 +3,10 @@ import swin from "../../assets/swin.svg";
 import bicycle from "../../assets/bicycle.svg";
 import barbell from "../../assets/barbell.svg";
 
+/**
+ * Renders a vertical navigator component with icons for different sports and a copyright notice.
+ * @returns {JSX.Element} The VerticalNavigator component.
+ */
 export default function VerticalNavigator() {
     return (
         <>
