@@ -9,7 +9,6 @@
 @import "../../components/HorizontalNavigator/HorizontalNavigator.scss";
 @import "../../components/VerticalNavigator/VerticalNavigator.scss";
 
-@import "../../components/DailyActivity/DailyActivity.scss";
 @import "../../components/DailyActivity/DailyActivityTooltip/DailyActivityTooltip.scss";
 
 @import "../../components/SessionDuration/SessionDuration.scss";
@@ -17,5 +16,8 @@
 
 @import "../../components/TypeActivity/TypeActivity.scss";
 @import "../../components/TypeActivity/TypeActivityTooltip/TypeActivityTooltip.scss";
+
+@import "../../components/AverageScore/AverageScore.scss";
+@import "../../components/AverageScore/AverageScoreLegend/AverageScoreLegend.scss";
 
 @import "./pages/profiles.scss";

@@ -1,0 +1,21 @@
+.score-legend {
+    &-container {
+        max-width: 95px;
+        margin: auto;
+        text-align: center;
+    }
+
+    &-score {
+        color: $grey-medium;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+    &-description {
+        color: $grey-light;
+        font-family: Roboto;
+        font-weight: 600;
+    }
+}

@@ -3,6 +3,7 @@ import { useUserData } from "../hooks/useUserServices";
 import DailyActivity from "../components/DailyActivity/DailyActivity";
 import SessionDuration from "../components/SessionDuration/SessionDuration";
 import TypeActivity from "../components/TypeActivity/TypeActivity";
+import AverageScore from "../components/AverageScore/AverageScore";
 
 export default function Profile() {
     const currentUser = useCurrentUser();
@@ -49,6 +50,11 @@ export default function Profile() {
                         </div>
                         <div className="type-activity">
                             <TypeActivity data={performance} />
+                        </div>
+                        <div className="average-score">
+                            <AverageScore
+                                data={user.todayScore || user.score}
+                            />
                         </div>
                     </div>
                 </>

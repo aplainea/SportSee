@@ -17,7 +17,7 @@ export default function DailyActivity({ data }) {
         <>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data} barGap={10}>
-                    <text x={20} y={20} fill="rgba(32, 37, 58, 1))">
+                    <text x={0} y={20} fill="rgba(32, 37, 58, 1))">
                         <tspan>Activité quotidienne</tspan>
                     </text>
                     <Legend
