@@ -4,6 +4,7 @@ import DailyActivity from "../components/DailyActivity/DailyActivity";
 import SessionDuration from "../components/SessionDuration/SessionDuration";
 import TypeActivity from "../components/TypeActivity/TypeActivity";
 import AverageScore from "../components/AverageScore/AverageScore";
+import CardKeysInfos from "../components/CardKeysInfos/CardKeysInfos";
 
 export default function Profile() {
     const currentUser = useCurrentUser();
@@ -27,38 +28,59 @@ export default function Profile() {
 
     return (
         <>
-            {userData && (
-                <>
-                    <div className="profile">
-                        <h1 className="title">
-                            Bonjour{" "}
-                            <span className="title-name">
-                                {user.userInfos.firstName}
-                            </span>
-                        </h1>
-                        <p className="sub-title">
-                            Félicitation ! Vous avez explosé vos objectifs hier
-                            👏
-                        </p>
-                    </div>
-                    <div className="activity-container">
-                        <DailyActivity data={activity.sessions} />
-                    </div>
-                    <div className="charts-container">
-                        <div className="session-duration">
-                            <SessionDuration data={averageSessions.sessions} />
+            <main className="profile-container">
+                <div className="profile">
+                    <h1 className="title">
+                        Bonjour{" "}
+                        <span className="title-name">
+                            {user.userInfos.firstName}
+                        </span>
+                    </h1>
+                    <p className="sub-title">
+                        Félicitation ! Vous avez explosé vos objectifs hier 👏
+                    </p>
+                </div>
+                <section className="charts-container">
+                    <div className="global-charts-container">
+                        <div className="activity-container">
+                            <DailyActivity data={activity.sessions} />
                         </div>
-                        <div className="type-activity">
-                            <TypeActivity data={performance} />
-                        </div>
-                        <div className="average-score">
-                            <AverageScore
-                                data={user.todayScore || user.score}
-                            />
+                        <div className="global-sub-charts-container">
+                            <div className="session-duration">
+                                <SessionDuration
+                                    data={averageSessions.sessions}
+                                />
+                            </div>
+                            <div className="type-activity">
+                                <TypeActivity data={performance} />
+                            </div>
+                            <div className="average-score">
+                                <AverageScore
+                                    data={user.todayScore || user.score}
+                                />
+                            </div>
                         </div>
                     </div>
-                </>
-            )}
+                    <div className="keys-charts-container">
+                        <CardKeysInfos
+                            label="Calories"
+                            value={user.keyData.calorieCount}
+                        />
+                        <CardKeysInfos
+                            label="Proteines"
+                            value={user.keyData.proteinCount}
+                        />
+                        <CardKeysInfos
+                            label="Glucides"
+                            value={user.keyData.carbohydrateCount}
+                        />
+                        <CardKeysInfos
+                            label="Lipides"
+                            value={user.keyData.lipidCount}
+                        />
+                    </div>
+                </section>
+            </main>
         </>
     );
 }

@@ -1,41 +1,75 @@
-.profile {
-    margin: 0 0 50px 0;
-    .title {
-        color: $black;
-        font-family: Roboto;
-        font-size: 48px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 24px;
-        padding: 0 0 40px 0;
+.profile-container {
+    .profile {
+        margin: 0 0 50px 0;
 
-        &-name {
-            color: $primary;
+        .title {
+            color: $black;
+            font-family: Roboto;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            padding: 0 0 40px 0;
+
+            &-name {
+                color: $primary;
+            }
+        }
+    }
+
+    .charts-container {
+        display: flex;
+        gap: 30px;
+
+        .global-charts-container {
+            .activity-container {
+                width: 835px;
+                height: 320px;
+                margin: 0 0 30px 0;
+                padding: 10px 20px 0;
+            }
+
+            .activity-container,
+            .average-score {
+                background: $white-light;
+                border-radius: 5px;
+            }
+
+            .global-sub-charts-container {
+                display: flex;
+                gap: 26px;
+
+                .session-duration,
+                .type-activity,
+                .average-score {
+                    width: 260px;
+                    width: 260px;
+                }
+            }
+        }
+
+        .keys-charts-container {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
         }
     }
 }
 
-.activity-container {
-    width: 835px;
-    height: 320px;
-    margin: 0 0 30px 0;
-    padding: 10px 20px 0;
-}
+@media screen and (max-width: 1400px) {
+    .profile-container {
+        .charts-container {
+            flex-direction: column;
 
-.activity-container,
-.average-score {
-    background: $white-light;
-    border-radius: 5px;
-}
+            .keys-charts-container {
+                max-width: 835px;
+                flex-direction: row;
+                gap: 18px;
 
-.charts-container {
-    display: flex;
-    gap: 30px;
-
-    .session-duration,
-    .type-activity,
-    .average-score {
-        width: 260px;
-        width: 260px;
+                .card-keys-infos {
+                    padding: 16px;
+                }
+            }
+        }
     }
 }

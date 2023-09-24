@@ -1,5 +1,6 @@
 .vertical-navigator {
     width: 118px;
+    min-width: 118px;
     min-height: calc(100vh - 90px);
     display: flex;
     justify-content: space-evenly;
