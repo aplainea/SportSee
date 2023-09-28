@@ -2,6 +2,9 @@
 
 SportSee is a fitness tracking application that allows users to track their physical activity and nutrition. This project is part of the Openclassrooms Front-end Developer program.
 
+![image](https://github.com/aplainea/SportSee/assets/37153490/d89753a5-9bbc-405f-ad75-03a281ba5d32)
+
+
 ## Installation
 
 1. Clone the GitHub repository: `git clone https://github.com/aplainea/SportSee`
